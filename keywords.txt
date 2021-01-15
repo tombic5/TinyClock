@@ -1,0 +1,9 @@
+TinyClock   KEYWORD1
+secs        KEYWORD2
+minutes     KEYWORD2
+hours       KEYWORD2
+days        KEYWORD2
+hhmm        KEYWORD2
+power_idle  KEYWORD2
+power_down  KEYWORD2
+sync        KEYWORD2

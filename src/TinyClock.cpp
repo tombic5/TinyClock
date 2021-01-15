@@ -115,7 +115,7 @@ void Timer::sync(){
     
     while( _seconds>0 && millis()-_starttime > TICKS_PER_SECOND){  //should survive overflow
         _starttime+=TICKS_PER_SECOND;
-        _seconds++;
+        _seconds--;
     }
 
 };

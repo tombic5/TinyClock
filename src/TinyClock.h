@@ -2,7 +2,8 @@
  * TinyClock - software Clock that reads millis() function and create clock with 
  * human readable values of hours, minutes, seconds and days from the start. That 
  * simplifies to handle daily/hourly etc. repeating tasks without all that math with 
- * millis(). Library is very tiny and optimized for small AVRs with limited Flash and RAM.
+ * millis(). Library is very tiny and optimized for small AVRs with limited Flash 
+ * and RAM.
  */
 
 #ifndef TinyClock_h
@@ -11,10 +12,13 @@
 #include "Arduino.h"
 
 #define TICKS_PER_SECOND 1000
-// millis() on ATTINY_MICRO is based on internal rc oscillator for WDT. It is not 
-// possible to calibrate it, so timing can be calibrated through TICKS_PER_SECOND.
-// if your timings are long (oscillator is slow), lower number for TICKS
-// if your timings are short (oscillator is faster), increase number for TICKS
+/* millis() timing in tiny13 (used with MicroCore) uses internal rc oscillator for WDT,
+ * that can't be calibrated. So timing can be calibrated through TICKS_PER_SECOND.
+ * millis() timing in tiny AVR's (used with TinyCore) may use internal rc oscillator. 
+ * That can be calibrated, but you can also calibrate timing with TICKS_PER_SECOND:
+ * - if your timings are long (oscillator is slow), lower number for TICKS
+ * - if your timings are short (oscillator is faster), increase number for TICKS 
+ */
 
 class TinyClock
 {

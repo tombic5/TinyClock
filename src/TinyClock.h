@@ -10,11 +10,11 @@
 
 #include "Arduino.h"
 
-#define TICKS_PER_SECOND 1030
-// millis() na ATTINY_MICRO je odvodene od WDT preruseni
-// preto treba casovanie doladit cez TICKS_PER_SECOND
-// ak su casy dlhsie (meska), treba TICKS ubrat
-// ak su casy kratsie (ponahla sa), treba TICKS pridat
+#define TICKS_PER_SECOND 1000
+// millis() on ATTINY_MICRO is based on internal rc oscillator for WDT. It is not 
+// possible to calibrate it, so timing can be calibrated through TICKS_PER_SECOND.
+// if your timings are long (oscillator is slow), lower number for TICKS
+// if your timings are short (oscillator is faster), increase number for TICKS
 
 class TinyClock
 {

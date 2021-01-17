@@ -36,12 +36,14 @@ void loop() {
     jobdone=0;  //time has gone - reinitialize
   }
 
+  #if defined(ARDUINO_ARCH_AVR)
   clk.power_idle(); //wait for millis update and save some power
+  #endif
   
   clk.sync();  //clock updates here, call frequently, keep jobs small. 
   /* Update at least once per second if you have scheduled events with 
    * seconds granularity  or you can miss scheduled time. There is no 
    * multitasking in arduino, so another job can't start until running
-   * one is not finished and loop() is run again.
+   * one is finished and loop() is run again.
    */
 }

@@ -15,5 +15,5 @@ Main features:
 
 # How to install
 
-Download .zip file and follow [this instructions.](https://www.arduino.cc/en/guide/libraries#toc4)
+Download as .zip file and follow [this instructions.](https://www.arduino.cc/en/guide/libraries#toc4) part "Importing a .zip Library"
 
